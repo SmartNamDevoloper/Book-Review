@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{%block nav_bar%}{{name}}<a href="/logout">Logout</a>{% endblock %}
+{% block heading %}
+    Book Details
+{% endblock %}
+{% block message %}
+<p>Please enter your review for the book</p>
+{% endblock %}
+
+{% block body %}
+  <div class="">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+            <th scope="col">Book_reviews from our website</th>
+            <th scope="col">GoodReads review count</th>
+            <th scope="col">GoodReads average rating</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">
+              {{book_info.isbn}}
+            </th>
+            <td>
+              {{book_info.title}}
+            </td>
+            <td>
+              {{book_info.author}}
+           </td>
+          <td>
+            {{book_info.year}}
+          </td>
+          <td>
+            {%for a_review in book_review%}
+            <ul>
+              <li>{{a_review.user_review}}</li>
+            </ul>
+            <br>
+            {%endfor%}
+            <br>
+          </td>
+          <td>
+            {{goodreads_review_count}}
+          </td>
+          <td>
+            {{goodreads_average_rating}}
+          </td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+
+<div class="review">
+  <form action="/review" method="POST" class="needs-validation">
+  <label>Enter your review</label>
+  <input type="hidden" name="book_id" value="{{book_info.id}}">
+  <br>
+  <textarea class="form-control" id="review_text" name="review_text" rows="4" cols="50" required></textarea>
+  <br>
+  <label>Choose a rating:</label>
+  <select name="rating" id="rating" required>
+  <option value="">rating</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+</select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+{% endblock %}

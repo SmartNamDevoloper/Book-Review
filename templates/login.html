@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{%block nav_bar%}{% endblock %}
+{% block heading %}
+  Login
+{% endblock %}
+{% block message %}
+Welcome to the Book Review website
+{% endblock %}
+{% block body %}
+<div class="container">
+
+    <div class="form row justify-content-center">
+
+        <form action="{{ url_for('check_login') }}" method="post" class="needs-validation">
+            <input type="text" name="name" placeholder="Enter Your Name" required><br>
+            <input type="password" name="password" placeholder="Enter Your password" required><br>
+            <div class="form row justify-content-center">
+              <button>Login</button>
+            </div>
+      </form>
+        </div>
+      <div class=" form row justify-content-center">
+        <p>If you havent registered yet please click here to register      </p>
+          <a href="/register_form">Register</a>
+      </div>
+
+
+  </div>
+
+{% endblock %}

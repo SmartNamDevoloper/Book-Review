@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{%block nav_bar%}{{name}}<a href="/logout">Logout</a>{% endblock %}
+{% block heading %}
+  Welcome
+{% endblock %}
+
+
+
+{% block message %}
+<p>{{message}} {{name}}</p>
+
+{% endblock %}
+{% block body %}
+<div class="container">
+
+    <div class=" row justify-content-center">
+  <form action="/search_book" method="POST" class="needs-validation">
+    <p>Please select based on what you would like to search:</p>
+    <div class="radio justify-content-center">
+      <input type="radio" id="isbn" name="search_book_criteria" value="isbn" required>
+      <label for="isbn">ISBN</label><br>
+      <input type="radio" id="author" name="search_book_criteria" value="author">
+      <label for="author">Author</label><br>
+      <input type="radio" id="title" name="search_book_criteria" value="title">
+      <label for="title">Title</label>
+    </div>
+    <input type="text" name="search_text" placeholder="enter your search" value="">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</div>
+
+{% endblock %}

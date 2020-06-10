@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+{% block message %}
+<p style="color:red">Error!</p>
+
+{{ message }}
+
+{% endblock %}
+{% block body %}
+<div class="container">
+  <div class=" form row justify-content-center">
+        <a href="/register_form">Register</a>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <a href="/">Login</a>
+</div>
+
+
+    <!-- <a href="{{ url_for('register_form') }}">Register</a> -->
+
+{% endblock %}
