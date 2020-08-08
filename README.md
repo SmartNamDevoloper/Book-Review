@@ -1,4 +1,4 @@
-# Project 1 for https://docs.cs50.net/ocw/web/projects/1/project1.html
+# Project 1 
 
 Web Programming with Python and JavaScript
 The main objectives of this project was to
