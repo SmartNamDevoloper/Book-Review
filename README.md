@@ -1,12 +1,17 @@
-# Project 1
+# Project 1 for https://docs.cs50.net/ocw/web/projects/1/project1.html
 
 Web Programming with Python and JavaScript
+The main objectives of this project was to
+1. Become more comfortable with Python.
+2. Gain experience with Flask.
+3. Learn to use SQL to interact with databases.
+
 
 Registration: Users are able to register for the website, providing a username and password.
 
 Login: Users, once registered, are able to log in to the website with their username and password.
 
-Logout: Logged in users should are able to log out of the site.
+Logout: Logged in users are able to log out of the site.
 
 Import: 
 In a Python file called import.py separate from the web application, will take the books and import them into the PostgreSQL database.
